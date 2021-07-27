@@ -306,8 +306,15 @@ a{
    width: 40%;
    box-sizing: border-box;
 }
-.button-exit-watchlist{
+.button-exit-watchlist, .button-exit-watchlist:focus{
    display: flex;
    justify-content: start;
    margin: 1rem;
+   background-color: $secondary-color;
+   border: none;
+   box-shadow: none;
+}
+.button-exit-watchlist:hover{
+   background-color: #fff;
+   color: $secondary-color;
 }
