@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 export const Actor = prop => {
 	const { store, actions } = useContext(Context);
-	//console.log(prop);
+
 	return (
 		<div className="actor">
 			<img

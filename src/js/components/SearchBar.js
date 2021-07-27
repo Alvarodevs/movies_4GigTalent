@@ -9,10 +9,11 @@ export const SearchBar = prop => {
 	const { store, actions } = useContext(Context);
 	const [input, setInput] = useState("");
 	const [watchListNumber, setWatchListNumber] = useState("");
-	let history = useHistory();
+	const history = useHistory();
 
 	const handleInput = e => {
 		setInput(e.target.value);
+		actions.addPagination(1);
 		actions.addQuery(e.target.value);
 		{
 			e.target.value !== ""
@@ -21,9 +22,9 @@ export const SearchBar = prop => {
 		}
 	};
 
-	// useEffect(() => {
-	// 	setWatchListNumber(store.watchListMovies.length);
-	// }, [!store.watchListMovies]);
+	useEffect(() => {
+		setInput("");
+	}, [location.pathname == "/"]);
 
 	return (
 		<div className="searchbar">

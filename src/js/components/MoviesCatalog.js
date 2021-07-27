@@ -21,13 +21,21 @@ export const MoviesCatalog = () => {
 	//PAGINATION
 	const paginationForward = () => {
 		actions.addPagination(++store.page);
-		actions.getMovieFromQuery();
+		{
+			store.q !== ""
+				? actions.getMovieFromQuery()
+				: actions.getMovieList();
+		}
 		scrollToTop();
 	};
 
 	const paginationBackward = () => {
 		actions.addPagination(--store.page);
-		actions.getMovieFromQuery();
+		{
+			store.q !== ""
+				? actions.getMovieFromQuery()
+				: actions.getMovieList();
+		}
 		scrollToTop();
 	};
 
