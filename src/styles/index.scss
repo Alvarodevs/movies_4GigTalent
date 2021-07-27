@@ -261,9 +261,14 @@ a{
    font-family: $font-main;
    justify-content: space-around;
 }
-
-.page-navigation-btn{
+.page-navigation-btn, .page-navigation-btn:focus{
    margin: 2rem;
+   background-color: $secondary-color;
+   border: none;
+   box-shadow: none;
+}
+.page-navigation-btn:hover{
+   background-color: #fff;
    color: $secondary-color;
 }
 //ACTOR CARD
@@ -288,7 +293,6 @@ a{
    color:#fff;
    float: left;
    margin: auto;
-   //10px 20px;
    width: 40%;
    box-sizing: border-box;
 }
